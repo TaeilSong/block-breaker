@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Block Breaker Bot Lab</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="game-stage" aria-label="블록격파 게임">
+        <canvas id="game" width="960" height="640"></canvas>
+        <div class="mobile-controls" aria-label="모바일 조작">
+          <button type="button" id="leftBtn" aria-label="왼쪽">←</button>
+          <button type="button" id="rightBtn" aria-label="오른쪽">→</button>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <header>
+          <p class="eyebrow">BREAKOUT BOT LAB</p>
+          <h1>블록격파</h1>
+        </header>
+
+        <div class="score-grid">
+          <div>
+            <span>점수</span>
+            <strong id="score">0</strong>
+          </div>
+          <div>
+            <span>공</span>
+            <strong id="lives">3</strong>
+          </div>
+          <div>
+            <span>레벨</span>
+            <strong id="level">1</strong>
+          </div>
+          <div>
+            <span>브릭</span>
+            <strong id="bricks">0</strong>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button type="button" id="serveBtn">서브</button>
+          <button type="button" id="restartBtn">재시작</button>
+          <label class="toggle">
+            <input type="checkbox" id="botToggle" />
+            <span>봇 플레이</span>
+          </label>
+        </div>
+
+        <div class="meter">
+          <div>
+            <span>봇 평가</span>
+            <strong id="botRating">대기 중</strong>
+          </div>
+          <button type="button" id="measureBtn">측정</button>
+        </div>
+
+        <dl class="rules">
+          <div>
+            <dt>쿠션</dt>
+            <dd>좌우 벽과 천장은 반사 쿠션이며, 바닥으로 떨어지면 공 하나를 잃습니다.</dd>
+          </div>
+          <div>
+            <dt>점수</dt>
+            <dd>상단 2줄 7점, 다음 2줄 5점, 다음 2줄 3점, 하단 2줄 1점입니다.</dd>
+          </div>
+          <div>
+            <dt>패들 반사</dt>
+            <dd>패들 중앙에서 멀리 맞을수록 더 큰 각도로 튕기며, 매 히트마다 속도가 조금 오릅니다.</dd>
+          </div>
+        </dl>
+
+        <p class="hint">조작: ← →, A D, Space</p>
+      </aside>
+    </main>
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
